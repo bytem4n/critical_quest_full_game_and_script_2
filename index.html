@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Critical Quest, an interactive retro platformer about critical thinking in professional environments.">
+<title>Critical Quest: Think Before You Act</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="scanlines"></div>
+
+<header>
+  <div class="logo">CRITICAL QUEST</div>
+  <div class="hud">
+    <span>COINS <b id="coins">00</b></span>
+    <span>WORLD <b id="levelName">MAP</b></span>
+    <button id="scriptBtn">PRESENTATION MODE</button>
+    <button id="sourcesBtn">RESEARCH</button>
+  </div>
+</header>
+
+<main>
+<section id="titleScreen" class="screen title-screen">
+  <div class="cloud c1"></div><div class="cloud c2"></div>
+  <div class="title-box">
+    <p>FTCC CRITICAL THINKING FINAL PROJECT</p>
+    <h1>CRITICAL<br>QUEST</h1>
+    <h2>THINK BEFORE YOU ACT</h2>
+    <button id="startBtn">PRESS START</button>
+    <small>Move with ← → or A/D. Press Enter near a gate.</small>
+  </div>
+  <div class="ground"></div>
+</section>
+
+<section id="gameScreen" class="screen game-screen hidden" aria-label="Interactive critical thinking game">
+  <div class="sky">
+    <div class="pixel-sun"></div>
+    <div class="cloud c3"></div><div class="cloud c4"></div>
+  </div>
+
+  <div class="world" id="world">
+    <div class="sign intro-sign">
+      <b>MISSION</b>
+      <span>Walk to each gate, complete the lesson, and defeat the final boss.</span>
+    </div>
+
+    <button class="gate" data-level="0" style="left:420px"><span class="flag">1</span><strong>PROBLEM</strong></button>
+    <button class="gate" data-level="1" style="left:830px"><span class="flag">2</span><strong>EVIDENCE</strong></button>
+    <button class="gate" data-level="2" style="left:1240px"><span class="flag">3</span><strong>BIAS</strong></button>
+    <button class="gate" data-level="3" style="left:1650px"><span class="flag">4</span><strong>WORKPLACE</strong></button>
+    <button class="gate" data-level="4" style="left:2060px"><span class="flag">5</span><strong>MEDIA</strong></button>
+    <button class="gate" data-level="5" style="left:2470px"><span class="flag">6</span><strong>ARGUMENTS</strong></button>
+    <button class="gate library-gate" data-level="6" style="left:2880px"><span class="flag">R</span><strong>RESEARCH</strong></button>
+    <button class="gate boss-gate" data-level="7" style="left:3290px"><span class="flag">★</span><strong>FINAL BOSS</strong></button>
+
+    <div id="player" class="player" aria-label="Player character">
+      <div class="hair"></div><div class="face"></div><div class="body"></div>
+      <div class="leg left"></div><div class="leg right"></div>
+    </div>
+
+    <div class="terrain"><div class="grass"></div><div class="dirt"></div></div>
+  </div>
+
+  <div class="controls">
+    <button id="leftBtn">◀</button>
+    <button id="enterBtn">ENTER LEVEL</button>
+    <button id="rightBtn">▶</button>
+  </div>
+</section>
+</main>
+
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="dialog">
+    <button class="close" id="closeModal">X</button>
+    <p id="worldLabel" class="world-label"></p>
+    <h2 id="modalTitle"></h2>
+    <div id="lesson"></div>
+    <div id="questionBox" class="question-box"></div>
+    <div id="feedback" class="feedback"></div>
+  </div>
+</div>
+
+<div id="scriptModal" class="modal hidden" role="dialog" aria-modal="true">
+  <div class="dialog script-dialog">
+    <button class="close" id="closeScript">X</button>
+    <p class="world-label">PRESENTATION SCRIPT</p>
+    <h2>HOW TO PRESENT THE GAME</h2>
+    <div id="scriptContent"></div>
+  </div>
+</div>
+
+<div id="sourcesModal" class="modal hidden" role="dialog" aria-modal="true">
+  <div class="dialog sources">
+    <button class="close" id="closeSources">X</button>
+    <p class="world-label">FTCC DATABASE ARCHIVE</p>
+    <h2>RESEARCH SOURCES</h2>
+    <p>The project uses scholarly material located through FTCC's public A–Z database directory and ERIC records.</p>
+    <article>
+      <h3>Critical Thinking in the Classroom…and Beyond</h3>
+      <p>Connects critical thinking to workplace problem solving, decision making, judgment, and analysis.</p>
+      <p class="citation">Murawski, L. M. (2014). <i>Journal of Learning in Higher Education, 10</i>(1), 25–30. ERIC EJ1143316.</p>
+    </article>
+    <article>
+      <h3>Critical Media Literacy in Teacher Education</h3>
+      <p>Explains the need to think critically across digital environments containing misinformation and deliberate falsehoods.</p>
+      <p class="citation">Trust, T., Maloy, R., Butler, A., & Goodman, L. (2022). <i>Journal of Technology and Teacher Education, 30</i>(2), 167–176. ERIC EJ1358615.</p>
+    </article>
+    <article>
+      <h3>Framing Fake News</h3>
+      <p>Supports a broad critical-thinking approach to misinformation and information literacy.</p>
+      <p class="citation">Faix, A., et al. (2020). <i>College & Research Libraries News, 81</i>(6). ERIC EJ1260743.</p>
+    </article>
+    <article>
+      <h3>Resolving Ethical Dilemmas in the Workplace</h3>
+      <p>Connects critical thinking, communication, conflict resolution, and mediation with ethical workplace decisions.</p>
+      <p class="citation">Lankard, B. A. (1991). ERIC Digest No. 112. ERIC ED334468.</p>
+    </article>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
